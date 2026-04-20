@@ -1,0 +1,620 @@
+[
+  {
+    "date": "2026-04-12 08:42",
+    "task": "open google and search for weather in Pune",
+    "successes": [
+      "Opened https://www.google.com",
+      "Clicked 'Google search input box' at 694,435",
+      "Typed: weather in Pune"
+    ],
+    "failures": [],
+    "total_steps": 10
+  },
+  {
+    "date": "2026-04-12 18:09",
+    "task": "open google and search for weather in Pune, gave up:false",
+    "successes": [
+      "Opened https://www.google.com",
+      "Clicked 'Google search input box' at 660,355",
+      "Typed: weather in Pune"
+    ],
+    "failures": [],
+    "total_steps": 9
+  },
+  {
+    "date": "2026-04-12 18:26",
+    "task": "open instagram and click on reel and like the reel, gave up:false",
+    "successes": [
+      "Opened https://www.instagram.com/reels/"
+    ],
+    "failures": [],
+    "total_steps": 4
+  },
+  {
+    "date": "2026-04-12 18:34",
+    "task": "open instagram.com in Google Chrome, wait 4 seconds for it to load, click Reels in the left sidebar, wait 3 seconds, click on the first reel to open it fullscreen, wait 2 seconds, click the three dot menu icon at the bottom of the reel, wait 1 second, click Copy Link from the menu, do NOT take any screenshots, gave up:false",
+    "successes": [
+      "Opened https://www.instagram.com",
+      "Clicked 'Reels icon in left sidebar' at 195,271",
+      "Clicked 'first reel video thumbnail' at 694,460",
+      "Clicked 'three dot menu icon at bottom of reel' at 909,704",
+      "Clicked 'Copy Link' at 1119,112"
+    ],
+    "failures": [],
+    "total_steps": 10
+  },
+  {
+    "date": "2026-04-12 18:42",
+    "task": "open instagram.com in Google Chrome, wait 4 seconds for it to load, click Reels in the left sidebar, wait 3 seconds, click on the first reel to open it fullscreen, wait 2 seconds, you will see actions on right side of reel window 1.like, 2.comment, 3.repost, 4.share, 5.save, 6.more. click on More which looks like three dot menu icon at the bottom of the reel, wait for 2 second,  click Copy Link from the sub-menu, do NOT take any screenshots , gave up:false",
+    "successes": [
+      "Opened https://www.instagram.com",
+      "Clicked 'Reels icon in left sidebar' at 194,271",
+      "Clicked 'first reel video thumbnail' at 694,460",
+      "Clicked 'three dot more icon at bottom right of reel actions' at 909,704",
+      "Clicked 'Copy Link from the sub-menu' at 140,761"
+    ],
+    "failures": [],
+    "total_steps": 10
+  },
+  {
+    "date": "2026-04-12 18:45",
+    "task": "open instagram.com in Google Chrome, wait 4 seconds, click Reels in the left sidebar, wait 3 seconds, click on the first reel to open it, wait 2 seconds, click the share button on the right side of the reel which looks like a paper airplane icon, wait 1 second, click Copy Link from the share options that appear, do NOT take any screenshots, gave up:false",
+    "successes": [
+      "Opened https://www.instagram.com",
+      "Clicked 'Reels icon in left sidebar' at 194,270",
+      "Clicked 'first reel thumbnail' at 694,460",
+      "Clicked 'share button paper airplane icon on right side of reel' at 909,604"
+    ],
+    "failures": [
+      "Could not find 'Copy Link from the share options' - skipped"
+    ],
+    "total_steps": 10
+  },
+  {
+    "date": "2026-04-12 18:52",
+    "task": "open instagram.com in Google Chrome, click Reels, click the first reel, wait 2 seconds, right click on the reel, click Copy Link Address from the context menu, gave up:false",
+    "successes": [
+      "Opened https://www.instagram.com",
+      "Clicked 'Reels icon in left sidebar' at 194,270",
+      "Clicked 'first reel thumbnail' at 694,460",
+      "Clicked 'center of the reel video' at 694,460"
+    ],
+    "failures": [
+      "Could not find 'Copy Link Address from the context menu' - skipped"
+    ],
+    "total_steps": 10
+  },
+  {
+    "date": "2026-04-12 18:53",
+    "task": "open instagram.com in Google Chrome, click Reels, click the first reel to open it, wait 2 seconds, click the browser address bar at the top, press Command+A to select all, press Command+C to copy, open Notes app and paste, gave up:false",
+    "successes": [
+      "Opened https://www.instagram.com",
+      "Clicked 'Reels icon in left sidebar' at 194,270",
+      "Clicked 'first reel thumbnail' at 694,460",
+      "Clicked 'browser address bar at the top' at 414,112",
+      "Typed: Notes"
+    ],
+    "failures": [],
+    "total_steps": 24
+  },
+  {
+    "date": "2026-04-12 23:47",
+    "task": "go to this link https://helpx.adobe.com/in/premiere/desktop.html read and understand the entire website read all internal pages as well tell me can you do that ? and read it quick like a machine not human, gave up:false",
+    "successes": [
+      "Opened https://helpx.adobe.com/in/premiere/desktop.html"
+    ],
+    "failures": [],
+    "total_steps": 4
+  },
+  {
+    "date": "2026-04-13 09:07",
+    "task": "open https://www.instagram.com/reels/DV0a_uGEwOe/ in Google Chrome, wait 3 seconds`\n\nThen **Read My Screen** to capture the actual content., gave up:false",
+    "successes": [
+      "Opened https://www.instagram.com/reels/DV0a_uGEwOe/"
+    ],
+    "failures": [],
+    "total_steps": 4
+  },
+  {
+    "date": "2026-04-13 18:16",
+    "task": "open google and search for weather in Pune, gave up:false",
+    "successes": [
+      "Opened https://www.google.com",
+      "Clicked 'search input box' at 769,387",
+      "Typed: weather in Pune"
+    ],
+    "failures": [],
+    "total_steps": 9
+  },
+  {
+    "date": "2026-04-13 18:18",
+    "task": "open google and search for weather in Pune, gave up:false",
+    "successes": [
+      "Opened https://www.google.com",
+      "Clicked 'search input box' at 766,386",
+      "Typed: weather in Pune"
+    ],
+    "failures": [],
+    "total_steps": 9
+  },
+  {
+    "date": "2026-04-13 18:35",
+    "task": "open google and search for weather in Pune, gave up:false",
+    "successes": [
+      "Opened https://www.google.com",
+      "Clicked 'search input box' at 771,388",
+      "Typed: weather in Pune"
+    ],
+    "failures": [],
+    "total_steps": 8
+  },
+  {
+    "date": "2026-04-13 19:40",
+    "task": "pen instagram and search for ashu.ashpawar profile , gave up:false",
+    "successes": [
+      "Opened https://www.instagram.com",
+      "Clicked 'search input box' at 923,47",
+      "Typed: ashu.ashpawar"
+    ],
+    "failures": [],
+    "total_steps": 8
+  },
+  {
+    "date": "2026-04-14 12:21",
+    "task": "open google and search for weather in Pune, gave up:false",
+    "successes": [
+      "Opened https://www.google.com",
+      "Clicked 'search input box' at 743,373",
+      "Typed: weather in Pune"
+    ],
+    "failures": [],
+    "total_steps": 8
+  },
+  {
+    "date": "2026-04-14 12:21",
+    "task": "Open Instagram in Chrome, search for Ashu.ashpawar, gave up:false",
+    "successes": [
+      "Opened https://www.instagram.com",
+      "Clicked 'search input box' at 923,130",
+      "Typed: ashu.ashpawar"
+    ],
+    "failures": [],
+    "total_steps": 8
+  },
+  {
+    "date": "2026-04-16 18:10",
+    "task": "video_editor: face_swap (engine=insightface, source_type=str, duration_sec=2151.4)",
+    "successes": [
+      "Completed face_swap with engine=insightface, source_type=str, duration_sec=2151.4"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "engine": "insightface",
+      "source_type": "str",
+      "duration_sec": 2151.4
+    }
+  },
+  {
+    "date": "2026-04-16 22:38",
+    "task": "video_editor: trim_video (start_sec=0.1, end_sec=12.0, duration_sec=0.4)",
+    "successes": [],
+    "failures": [
+      "Error in file /Users/ashwinipawar/Downloads/velabeauty_3872295995527070425.mp4, Accessing time t=11.68-11.73 seconds, with clip duration=11 seconds, "
+    ],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "start_sec": 0.1,
+      "end_sec": 12.0,
+      "duration_sec": 0.4
+    }
+  },
+  {
+    "date": "2026-04-16 22:39",
+    "task": "video_editor: trim_video (start_sec=1.0, end_sec=5.0, duration_sec=1.3)",
+    "successes": [
+      "Completed trim_video with start_sec=1.0, end_sec=5.0, duration_sec=1.3"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "start_sec": 1.0,
+      "end_sec": 5.0,
+      "duration_sec": 1.3
+    }
+  },
+  {
+    "date": "2026-04-16 22:41",
+    "task": "video_editor: merge_videos (count=2)",
+    "successes": [
+      "Completed merge_videos with count=2"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "count": 2
+    }
+  },
+  {
+    "date": "2026-04-16 23:12",
+    "task": "video_editor: add_background_music (volume=0.3, duration_sec=3.4)",
+    "successes": [
+      "Completed add_background_music with volume=0.3, duration_sec=3.4"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "volume": 0.3,
+      "duration_sec": 3.4
+    }
+  },
+  {
+    "date": "2026-04-16 23:15",
+    "task": "video_editor: add_background_music (volume=0.4, duration_sec=4.0)",
+    "successes": [
+      "Completed add_background_music with volume=0.4, duration_sec=4.0"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "volume": 0.4,
+      "duration_sec": 4.0
+    }
+  },
+  {
+    "date": "2026-04-16 23:23",
+    "task": "video_editor: trim_video (start_sec=3.0, end_sec=7.0, duration_sec=1.6)",
+    "successes": [
+      "Completed trim_video with start_sec=3.0, end_sec=7.0, duration_sec=1.6"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 1.6
+    }
+  },
+  {
+    "date": "2026-04-16 23:31",
+    "task": "video_editor: face_swap (engine=insightface, source_type=str, duration_sec=362.0)",
+    "successes": [
+      "Completed face_swap with engine=insightface, source_type=str, duration_sec=362.0"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "engine": "insightface",
+      "source_type": "str",
+      "duration_sec": 362.0
+    }
+  },
+  {
+    "date": "2026-04-16 23:48",
+    "task": "video_editor: face_swap (engine=insightface, source_type=str, duration_sec=462.6)",
+    "successes": [
+      "Completed face_swap with engine=insightface, source_type=str, duration_sec=462.6"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "engine": "insightface",
+      "source_type": "str",
+      "duration_sec": 462.6
+    }
+  },
+  {
+    "date": "2026-04-17 08:37",
+    "task": "video_editor: face_swap",
+    "successes": [],
+    "failures": [
+      "resolve_face_image: Cannot resolve face source: '/user/ashwinipawar/downloads/ai model/primary.jpg'\nValid options:\n  \u2022 An image file path (.jpg, .png \u2026)\n  \u2022 An AI description JSON file path (.json)\n  \u2022 An Instagram @username\n  \u2022 A direct image URL\n  \u2022 A JSON string pasted inline"
+    ],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {}
+  },
+  {
+    "date": "2026-04-17 08:38",
+    "task": "video_editor: face_swap",
+    "successes": [],
+    "failures": [
+      "resolve_face_image: Cannot resolve face source: '/users/ashwinipwar/Downloads/ai model/primary.jpg'\nValid options:\n  \u2022 An image file path (.jpg, .png \u2026)\n  \u2022 An AI description JSON file path (.json)\n  \u2022 An Instagram @username\n  \u2022 A direct image URL\n  \u2022 A JSON string pasted inline"
+    ],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {}
+  },
+  {
+    "date": "2026-04-17 09:21",
+    "task": "video_editor: face_swap (engine=insightface, source_type=str, duration_sec=697.5)",
+    "successes": [
+      "Completed face_swap with engine=insightface, source_type=str, duration_sec=697.5"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "engine": "insightface",
+      "source_type": "str",
+      "duration_sec": 697.5
+    }
+  },
+  {
+    "date": "2026-04-17 10:33",
+    "task": "video_editor: face_swap (engine=insightface, source_type=str, duration_sec=1213.0)",
+    "successes": [
+      "Completed face_swap with engine=insightface, source_type=str, duration_sec=1213.0"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "engine": "insightface",
+      "source_type": "str",
+      "duration_sec": 1213.0
+    }
+  },
+  {
+    "date": "2026-04-17 11:03",
+    "task": "video_editor: face_swap (engine=insightface, source_type=str, duration_sec=628.2)",
+    "successes": [
+      "Completed face_swap with engine=insightface, source_type=str, duration_sec=628.2"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "engine": "insightface",
+      "source_type": "str",
+      "duration_sec": 628.2
+    }
+  },
+  {
+    "date": "2026-04-17 11:27",
+    "task": "video_editor: face_swap (engine=insightface, source_type=str, duration_sec=826.9)",
+    "successes": [
+      "Completed face_swap with engine=insightface, source_type=str, duration_sec=826.9"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "engine": "insightface",
+      "source_type": "str",
+      "duration_sec": 826.9
+    }
+  },
+  {
+    "date": "2026-04-17 12:04",
+    "task": "video_editor: face_swap (engine=insightface, source_type=str, duration_sec=1075.2)",
+    "successes": [
+      "Completed face_swap with engine=insightface, source_type=str, duration_sec=1075.2"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "engine": "insightface",
+      "source_type": "str",
+      "duration_sec": 1075.2
+    }
+  },
+  {
+    "date": "2026-04-17 12:45",
+    "task": "video_editor: face_swap (engine=insightface, source_type=str, duration_sec=685.2)",
+    "successes": [
+      "Completed face_swap with engine=insightface, source_type=str, duration_sec=685.2"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "engine": "insightface",
+      "source_type": "str",
+      "duration_sec": 685.2
+    }
+  },
+  {
+    "date": "2026-04-17 13:16",
+    "task": "video_editor: face_swap (engine=insightface, source_type=str, duration_sec=906.4)",
+    "successes": [
+      "Completed face_swap with engine=insightface, source_type=str, duration_sec=906.4"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "engine": "insightface",
+      "source_type": "str",
+      "duration_sec": 906.4
+    }
+  },
+  {
+    "date": "2026-04-17 14:33",
+    "task": "video_editor: face_swap_replicate (engine=replicate, api_calls=60, est_cost_usd=0.18, duration_sec=36.3)",
+    "successes": [
+      "Completed face_swap_replicate with engine=replicate, api_calls=60, est_cost_usd=0.18, duration_sec=36.3"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "engine": "replicate",
+      "api_calls": 60,
+      "est_cost_usd": 0.18,
+      "duration_sec": 36.3
+    }
+  },
+  {
+    "date": "2026-04-17 22:17",
+    "task": "video_editor: face_swap (engine=insightface, source_type=str, duration_sec=976.1)",
+    "successes": [
+      "Completed face_swap with engine=insightface, source_type=str, duration_sec=976.1"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "engine": "insightface",
+      "source_type": "str",
+      "duration_sec": 976.1
+    }
+  },
+  {
+    "date": "2026-04-17 22:35",
+    "task": "video_editor: face_swap (engine=insightface, source_type=str, duration_sec=644.4)",
+    "successes": [
+      "Completed face_swap with engine=insightface, source_type=str, duration_sec=644.4"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "engine": "insightface",
+      "source_type": "str",
+      "duration_sec": 644.4
+    }
+  },
+  {
+    "date": "2026-04-18 11:12",
+    "task": "video_editor: trim_video (start_sec=0.0, end_sec=9.0, duration_sec=1.7)",
+    "successes": [
+      "Completed trim_video with start_sec=0.0, end_sec=9.0, duration_sec=1.7"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "start_sec": 0.0,
+      "end_sec": 9.0,
+      "duration_sec": 1.7
+    }
+  },
+  {
+    "date": "2026-04-18 11:55",
+    "task": "video_editor: face_swap (engine=insightface, source_type=str, duration_sec=2260.5)",
+    "successes": [
+      "Completed face_swap with engine=insightface, source_type=str, duration_sec=2260.5"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "engine": "insightface",
+      "source_type": "str",
+      "duration_sec": 2260.5
+    }
+  },
+  {
+    "date": "2026-04-18 12:15",
+    "task": "video_editor: face_swap (engine=insightface, source_type=str, duration_sec=644.4)",
+    "successes": [
+      "Completed face_swap with engine=insightface, source_type=str, duration_sec=644.4"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "engine": "insightface",
+      "source_type": "str",
+      "duration_sec": 644.4
+    }
+  },
+  {
+    "date": "2026-04-18 20:21",
+    "task": "video_editor: face_swap (engine=insightface, source_type=str, duration_sec=1514.6)",
+    "successes": [
+      "Completed face_swap with engine=insightface, source_type=str, duration_sec=1514.6"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "engine": "insightface",
+      "source_type": "str",
+      "duration_sec": 1514.6
+    }
+  },
+  {
+    "date": "2026-04-18 21:09",
+    "task": "video_editor: face_swap (engine=insightface, source_type=str, duration_sec=569.6)",
+    "successes": [
+      "Completed face_swap with engine=insightface, source_type=str, duration_sec=569.6"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "engine": "insightface",
+      "source_type": "str",
+      "duration_sec": 569.6
+    }
+  },
+  {
+    "date": "2026-04-18 21:28",
+    "task": "video_editor: face_swap (engine=insightface, source_type=str, duration_sec=560.1)",
+    "successes": [
+      "Completed face_swap with engine=insightface, source_type=str, duration_sec=560.1"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "engine": "insightface",
+      "source_type": "str",
+      "duration_sec": 560.1
+    }
+  },
+  {
+    "date": "2026-04-18 21:28",
+    "task": "video_editor: background_blur (blur_radius=30)",
+    "successes": [
+      "Completed background_blur with blur_radius=30"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "blur_radius": 30
+    }
+  },
+  {
+    "date": "2026-04-18 22:04",
+    "task": "video_editor: face_swap (engine=insightface, source_type=str, duration_sec=1705.1)",
+    "successes": [
+      "Completed face_swap with engine=insightface, source_type=str, duration_sec=1705.1"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "engine": "insightface",
+      "source_type": "str",
+      "duration_sec": 1705.1
+    }
+  },
+  {
+    "date": "2026-04-18 22:05",
+    "task": "video_editor: create_ai_avatar (voice=Samantha, script_words=1)",
+    "successes": [
+      "Completed create_ai_avatar with voice=Samantha, script_words=1"
+    ],
+    "failures": [],
+    "total_steps": 1,
+    "category": "video_editor",
+    "settings": {
+      "voice": "Samantha",
+      "script_words": 1
+    }
+  }
+]

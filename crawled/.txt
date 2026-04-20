@@ -1,0 +1,23 @@
+--- PAGE: amazon.com --- failed to load: Message: invalid argument
+  (Session info: chrome=147.0.7727.56)
+Stacktrace:
+0   chromedriver                        0x0000000102c7fab4 cxxbridge1$str$ptr + 3192864
+1   chromedriver                        0x0000000102c77a84 cxxbridge1$str$ptr + 3160048
+2   chromedriver                        0x00000001027435c4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 74840
+3   chromedriver                        0x000000010272d1e4 cxxbridge1$string$len + 1728
+4   chromedriver                        0x000000010272b5b0 chromedriver + 226736
+5   chromedriver                        0x000000010272bf14 chromedriver + 229140
+6   chromedriver                        0x0000000102746ca4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 88888
+7   chromedriver                        0x00000001027cbf04 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 634264
+8   chromedriver                        0x00000001027cb448 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 631516
+9   chromedriver                        0x0000000102780e50 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 326884
+10  chromedriver                        0x0000000102c3d240 cxxbridge1$str$ptr + 2920364
+11  chromedriver                        0x0000000102c40a20 cxxbridge1$str$ptr + 2934668
+12  chromedriver                        0x0000000102c231f4 cxxbridge1$str$ptr + 2813792
+13  chromedriver                        0x0000000102c412a0 cxxbridge1$str$ptr + 2936844
+14  chromedriver                        0x0000000102c1401c cxxbridge1$str$ptr + 2751880
+15  chromedriver                        0x0000000102c66980 cxxbridge1$str$ptr + 3090156
+16  chromedriver                        0x0000000102c66afc cxxbridge1$str$ptr + 3090536
+17  chromedriver                        0x0000000102c776dc cxxbridge1$str$ptr + 3159112
+18  libsystem_pthread.dylib             0x000000019a8902e4 _pthread_start + 136
+19  libsystem_pthread.dylib             0x000000019a88b0fc thread_start + 8
