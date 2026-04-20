@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reels Downloader</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0f1117;
+      --surface:   #1a1d27;
+      --border:    #2e3140;
+      --accent:    #e1306c;   /* Instagram pink */
+      --accent-h:  #f0527f;
+      --grad-a:    #f58529;   /* Instagram orange */
+      --grad-b:    #dd2a7b;   /* Instagram pink */
+      --grad-c:    #8134af;   /* Instagram purple */
+      --text:      #e2e4ef;
+      --muted:     #6b7080;
+      --success:   #3ecf8e;
+      --error:     #f87171;
+      --font-mono: "SF Mono", "Fira Code", Consolas, monospace;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .shell {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 28px 20px 20px;
+      gap: 18px;
+    }
+
+    /* ── Header ── */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .ig-icon {
+      width: 34px; height: 34px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, var(--grad-a), var(--grad-b), var(--grad-c));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    header h1 {
+      font-size: 17px;
+      font-weight: 600;
+    }
+    header p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .status-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--muted);
+      margin-left: auto;
+      flex-shrink: 0;
+      transition: background .3s;
+    }
+    .status-dot.running { background: var(--success); box-shadow: 0 0 6px var(--success); }
+    .status-dot.error   { background: var(--error); }
+
+    /* ── Form card ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    /* username row */
+    .input-prefix-wrap {
+      display: flex;
+      align-items: center;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: border-color .2s;
+    }
+    .input-prefix-wrap:focus-within { border-color: var(--accent); }
+    .prefix {
+      padding: 0 10px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 500;
+      user-select: none;
+      border-right: 1px solid var(--border);
+    }
+    #username {
+      flex: 1;
+      background: none;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-size: 15px;
+      padding: 9px 12px;
+    }
+    #username::placeholder { color: var(--muted); }
+
+    /* count row */
+    .count-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .count-stepper {
+      display: flex;
+      align-items: center;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .step-btn {
+      width: 36px; height: 38px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 18px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: color .15s, background .15s;
+    }
+    .step-btn:hover:not(:disabled) { color: var(--text); background: var(--border); }
+    .step-btn:disabled { opacity: .3; cursor: default; }
+    #count {
+      width: 52px;
+      text-align: center;
+      background: none;
+      border: none;
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      outline: none;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 8px 4px;
+    }
+    /* hide native number arrows */
+    #count::-webkit-inner-spin-button,
+    #count::-webkit-outer-spin-button { -webkit-appearance: none; }
+    #count[type=number] { -moz-appearance: textfield; }
+
+    .count-presets {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .preset {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: none;
+      color: var(--muted);
+      cursor: pointer;
+      transition: color .15s, border-color .15s, background .15s;
+    }
+    .preset:hover,
+    .preset.active {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 10%, transparent);
+    }
+
+    /* action row */
+    .action-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-top: 2px;
+    }
+
+    .btn {
+      font-size: 14px;
+      font-weight: 600;
+      padding: 9px 22px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: opacity .15s, transform .1s;
+      white-space: nowrap;
+    }
+    .btn:active { transform: scale(.97); }
+    .btn:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+
+    .btn-download {
+      background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
+      color: #fff;
+      flex: 1;
+    }
+    .btn-download:hover:not(:disabled) { opacity: .88; }
+
+    .btn-stop {
+      background: color-mix(in srgb, var(--error) 15%, transparent);
+      color: var(--error);
+      border: 1px solid color-mix(in srgb, var(--error) 30%, transparent);
+      display: none;
+    }
+    .btn-stop.visible { display: inline-flex; }
+    .btn-stop:hover:not(:disabled) {
+      background: color-mix(in srgb, var(--error) 25%, transparent);
+    }
+
+    /* ── Output panel ── */
+    .output-wrap {
+      flex: 1;
+      min-height: 0;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .output-toolbar {
+      display: flex;
+      align-items: center;
+      padding: 8px 14px;
+      border-bottom: 1px solid var(--border);
+      gap: 8px;
+    }
+    .output-toolbar span {
+      font-size: 12px;
+      color: var(--muted);
+      flex: 1;
+    }
+    .btn-icon {
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 13px;
+      padding: 3px 8px;
+      border-radius: 5px;
+      transition: color .2s, background .2s;
+    }
+    .btn-icon:hover { color: var(--text); background: var(--border); }
+
+    #output {
+      flex: 1;
+      overflow-y: auto;
+      padding: 14px 16px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1.8;
+      white-space: pre-wrap;
+      word-break: break-all;
+      color: #c9d1e8;
+    }
+    #output:empty::before {
+      content: "Download log will appear here…";
+      color: var(--muted);
+      font-style: italic;
+    }
+    .line-ok    { color: var(--success); }
+    .line-error { color: var(--error); }
+    .line-dim   { color: var(--muted); }
+
+    /* Download file button */
+    .file-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin: 4px 0;
+      padding: 7px 14px;
+      background: color-mix(in srgb, var(--success) 12%, transparent);
+      border: 1px solid color-mix(in srgb, var(--success) 30%, transparent);
+      border-radius: 7px;
+      color: var(--success);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      text-decoration: none;
+      transition: background .15s;
+    }
+    .file-btn:hover {
+      background: color-mix(in srgb, var(--success) 22%, transparent);
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- Header -->
+  <header>
+    <div class="ig-icon">📥</div>
+    <div>
+      <h1>Instagram Reels Downloader</h1>
+      <p>Download reels from any public profile</p>
+    </div>
+    <span id="statusDot" class="status-dot"></span>
+  </header>
+
+  <!-- Form -->
+  <div class="card">
+
+    <!-- Username -->
+    <div class="field">
+      <label for="username">Instagram Profile</label>
+      <div class="input-prefix-wrap">
+        <span class="prefix">@</span>
+        <input
+          type="text"
+          id="username"
+          placeholder="username"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+        />
+      </div>
+    </div>
+
+    <!-- Count -->
+    <div class="field">
+      <label>Number of Reels</label>
+      <div class="count-row">
+        <div class="count-stepper">
+          <button class="step-btn" id="btnMinus" title="Decrease">−</button>
+          <input type="number" id="count" value="5" min="1" max="50" />
+          <button class="step-btn" id="btnPlus"  title="Increase">+</button>
+        </div>
+        <div class="count-presets">
+          <button class="preset" data-val="5">5</button>
+          <button class="preset" data-val="10">10</button>
+          <button class="preset" data-val="20">20</button>
+          <button class="preset" data-val="50">50</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="action-row">
+      <button class="btn btn-stop" id="btnStop">■ Stop</button>
+      <button class="btn btn-download" id="btnDownload">Download Reels ↓</button>
+    </div>
+
+  </div>
+
+  <!-- Output -->
+  <div class="output-wrap">
+    <div class="output-toolbar">
+      <span id="statusText">Ready</span>
+      <button class="btn-icon" id="btnCopy">Copy</button>
+      <button class="btn-icon" id="btnClear">Clear</button>
+    </div>
+    <div id="output"></div>
+  </div>
+
+</div>
+
+<script>
+  // ── Elements ──────────────────────────────────────────────────────────────
+  const usernameEl = document.getElementById("username");
+  const countEl    = document.getElementById("count");
+  const btnDl      = document.getElementById("btnDownload");
+  const btnStop    = document.getElementById("btnStop");
+  const btnMinus   = document.getElementById("btnMinus");
+  const btnPlus    = document.getElementById("btnPlus");
+  const presets    = document.querySelectorAll(".preset");
+  const output     = document.getElementById("output");
+  const statusDot  = document.getElementById("statusDot");
+  const statusTxt  = document.getElementById("statusText");
+  const btnCopy    = document.getElementById("btnCopy");
+  const btnClear   = document.getElementById("btnClear");
+
+  let controller = null;
+  let running    = false;
+
+  // ── Count stepper ─────────────────────────────────────────────────────────
+  function getCount()      { return parseInt(countEl.value) || 5; }
+  function setCount(n)     { countEl.value = Math.max(1, Math.min(50, n)); syncPresets(); }
+  btnMinus.addEventListener("click", () => setCount(getCount() - 1));
+  btnPlus.addEventListener( "click", () => setCount(getCount() + 1));
+  countEl.addEventListener( "change", () => setCount(getCount()));
+
+  function syncPresets() {
+    const v = String(getCount());
+    presets.forEach(p => p.classList.toggle("active", p.dataset.val === v));
+  }
+  presets.forEach(p => {
+    p.addEventListener("click", () => { setCount(parseInt(p.dataset.val)); });
+  });
+  syncPresets();
+
+  // ── Strip @ if pasted ─────────────────────────────────────────────────────
+  usernameEl.addEventListener("input", () => {
+    if (usernameEl.value.startsWith("@"))
+      usernameEl.value = usernameEl.value.slice(1);
+  });
+
+  // ── Enter key on username field ───────────────────────────────────────────
+  usernameEl.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !running) startDownload();
+  });
+
+  // ── Buttons ───────────────────────────────────────────────────────────────
+  btnDl.addEventListener(  "click", () => { if (!running) startDownload(); });
+  btnStop.addEventListener("click", () => { if (controller) controller.abort(); });
+  btnClear.addEventListener("click", () => { output.innerHTML = ""; setStatus("idle"); });
+  btnCopy.addEventListener("click", () => {
+    navigator.clipboard.writeText(output.innerText).then(() => {
+      btnCopy.textContent = "Copied!";
+      setTimeout(() => { btnCopy.textContent = "Copy"; }, 1500);
+    });
+  });
+
+  // ── Helpers ───────────────────────────────────────────────────────────────
+  function setStatus(state, text) {
+    statusDot.className = "status-dot" + (state !== "idle" ? " " + state : "");
+    statusTxt.textContent = text
+      || { idle: "Ready", running: "Downloading…", error: "Error" }[state]
+      || state;
+  }
+
+  function appendLine(text, cls) {
+    const span = document.createElement("span");
+    if (cls) span.className = cls;
+    span.textContent = text;
+    output.appendChild(span);
+    output.scrollTop = output.scrollHeight;
+  }
+
+  function setRunning(yes) {
+    running = yes;
+    btnDl.disabled = yes;
+    btnStop.classList.toggle("visible", yes);
+    btnMinus.disabled = yes;
+    btnPlus.disabled  = yes;
+    presets.forEach(p => p.disabled = yes);
+    usernameEl.disabled = yes;
+  }
+
+  // ── Core: stream from /download ───────────────────────────────────────────
+  async function startDownload() {
+    const username = usernameEl.value.trim();
+    if (!username) { usernameEl.focus(); return; }
+
+    const count = getCount();
+    output.innerHTML = "";
+    setRunning(true);
+    setStatus("running");
+
+    controller = new AbortController();
+
+    try {
+      const resp = await fetch("/download", {
+        method:  "POST",
+        headers: { "Content-Type": "application/json" },
+        body:    JSON.stringify({ username, count }),
+        signal:  controller.signal,
+      });
+
+      if (!resp.ok) {
+        appendLine(`HTTP error ${resp.status}\n`, "line-error");
+        setStatus("error");
+        return;
+      }
+
+      const reader  = resp.body.getReader();
+      const decoder = new TextDecoder();
+      let   buffer  = "";
+
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const events = buffer.split("\n\n");
+        buffer = events.pop();
+
+        for (const ev of events) {
+          if (!ev.startsWith("data:")) continue;
+          const raw = ev.slice(5).trim();
+          if (raw === "[DONE]") { setStatus("idle", "Done"); setRunning(false); return; }
+
+          let obj;
+          try { obj = JSON.parse(raw); } catch { continue; }
+
+          if (obj.error) {
+            appendLine("❌ " + obj.error + "\n", "line-error");
+            setStatus("error");
+          } else if (obj.text) {
+            const t = obj.text;
+
+            // File download link
+            if (t.startsWith("__FILE__")) {
+              const fname = t.slice(8).trim();
+              const a = document.createElement("a");
+              a.href      = "/files/" + encodeURIComponent(fname);
+              a.download  = fname;
+              a.className = "file-btn";
+              a.innerHTML = `⬇ ${fname}`;
+              output.appendChild(a);
+              output.appendChild(document.createTextNode("\n"));
+              output.scrollTop = output.scrollHeight;
+              continue;
+            }
+
+            const cls = t.startsWith("✅")   ? "line-ok"
+                      : t.startsWith("❌")   ? "line-error"
+                      : t.startsWith("─")   ? "line-dim"
+                      : null;
+            appendLine(t, cls);
+          }
+        }
+      }
+
+    } catch (err) {
+      if (err.name === "AbortError") {
+        appendLine("\n⚠️  Stopped by user.\n", "line-error");
+        setStatus("idle", "Stopped");
+      } else {
+        appendLine(`\n❌ ${err.message}\n`, "line-error");
+        setStatus("error");
+      }
+    } finally {
+      setRunning(false);
+      controller = null;
+    }
+  }
+
+  // ── Focus on load ─────────────────────────────────────────────────────────
+  usernameEl.focus();
+</script>
+</body>
+</html>

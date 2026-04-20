@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: reels-downloader
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --timeout 120 --workers 1 --threads 4
+    envVars:
+      - key: AGENT_PASSWORD
+        sync: false          # set in Render dashboard
+      - key: INSTAGRAM_SESSION
+        sync: false          # set in Render dashboard (base64 of your session .json)
